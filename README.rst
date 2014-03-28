@@ -7,9 +7,15 @@ Fuzzy datetime reading.
 Examples
 --------
 
+Import the main function:
+
+.. code-block:: python
+
+    >>> from fuzzy_dates import load_date
+
 Examples of direct reading:
 
-.. code-block:: bash
+.. code-block:: python
 
     >>> load_date('-0600', '-%H%M', verbose=1).strftime("%Y/%m/%d %Hh")
     [direct]
@@ -20,7 +26,7 @@ Examples of direct reading:
 
 Examples of fuzzy reading:
 
-.. code-block:: bash
+.. code-block:: python
 
     >>> load_date('-0600', '[-+]%H%M', verbose=1)
     [fuzzy]
@@ -35,7 +41,7 @@ Examples of fuzzy reading:
 
 Examples of fuzzy reading for timedelta:
 
-.. code-block:: bash
+.. code-block:: python
 
     >>> load_date('-0600', '[-+]%H%M', delta=True, verbose=0)
     datetime.timedelta(0, 21600)

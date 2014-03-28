@@ -43,6 +43,7 @@ def test_suite():
     tests.addTests(doctest.DocTestSuite(fuzzy_dates,
                                         optionflags=opt,
                                         extraglobs=globs))
+    tests.addTests(doctest.DocFileSuite('../README.rst'))
 
 
     return unittest.TestSuite(tests)
