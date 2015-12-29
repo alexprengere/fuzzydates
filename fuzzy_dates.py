@@ -119,7 +119,7 @@ def load_date(fuzzy_date, pattern, delta=False, export=False, verbose=0):
 
     # If we are here, previous try failed,
     # so we try fuzzy interpretation
-    try :
+    try:
         dt = _load_date_fuzzy(fuzzy_date, pattern, verbose=verbose)
 
     except ValueError:
