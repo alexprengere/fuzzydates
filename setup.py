@@ -28,9 +28,4 @@ setup(
     py_modules=[
         'fuzzy_dates'
     ],
-    data_files=[
-        ('test', [
-            'test/test_fuzzy_dates.py'
-        ])
-    ]
 )
