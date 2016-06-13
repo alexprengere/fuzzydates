@@ -116,7 +116,6 @@ def load_date(fuzzy_date, pattern, delta=False, export=False, verbose=0):
         # Success: we return the datetime result
         return _export(dt, delta=delta, export=export)
 
-
     # If we are here, previous try failed,
     # so we try fuzzy interpretation
     try:
@@ -154,7 +153,6 @@ def _export(dt, delta=False, export=False):
         return str(dt)
 
     return dt
-
 
 
 def _load_date_direct(fuzzy_date, pattern, verbose=1):
@@ -252,32 +250,5 @@ def _match_to_dt(match):
 
     smatch = [('%%%s' % k, m) for k, m in match.iteritems() if m is not None]
 
-    return datetime.strptime('_'.join(t[1] for t in smatch), # date
-                             '_'.join(t[0] for t in smatch)) # pattern
-
-
-
-def _test():
-    """
-    Test on direct call.
-    """
-
-    import doctest
-
-    optionflags = (
-        doctest.NORMALIZE_WHITESPACE      |
-        doctest.ELLIPSIS                  |
-        doctest.REPORT_ONLY_FIRST_FAILURE |
-        doctest.IGNORE_EXCEPTION_DETAIL
-    )
-
-    globs = {}
-
-    doctest.testmod(optionflags=optionflags,
-                    extraglobs=globs,
-                    verbose=False)
-
-
-if __name__ == '__main__':
-    _test()
-
+    return datetime.strptime('_'.join(t[1] for t in smatch),  # date
+                             '_'.join(t[0] for t in smatch))  # pattern
